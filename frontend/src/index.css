@@ -1,0 +1,9 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+@layer components {
+  .card { @apply rounded-2xl bg-white p-4 shadow-sm ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-800; }
+  .btn { @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-indigo-600 px-4 text-sm font-semibold text-white active:scale-95 hover:bg-indigo-700 disabled:opacity-50; }
+  .btn-ghost { @apply btn bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-200; }
+  .input { @apply min-h-[44px] w-full rounded-xl border border-slate-300 bg-white px-3 text-sm dark:border-slate-700 dark:bg-slate-900; }
+}
+@media print { body * { visibility: hidden; } #receipt, #receipt * { visibility: visible; } #receipt { position: absolute; inset: 0 0 auto 0; border: 0; } }
+@media print { #report, #report * { visibility: visible; } #report { position: absolute; inset: 0 0 auto 0; } .noprint { display: none !important; } }
