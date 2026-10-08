@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: unknown-coaching-centre
+    runtime: node
+    plan: free
+    buildCommand: cd frontend && npm install && npm run build && cd ../backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - { key: MONGODB_URI, sync: false }
+      - { key: JWT_SECRET, generateValue: true }
+      - { key: SEED_ADMIN_EMAIL, value: admin@unknowncoachingcentre.com }
+      - { key: SEED_ADMIN_PASSWORD, sync: false }
+      - { key: GMAIL_USER, value: unknowncoachingcentre@gmail.com }
+      - { key: GMAIL_APP_PASSWORD, sync: false }
+      - { key: ADMIN_NOTIFY_EMAIL, value: unknowncoachingcentre@gmail.com }
+      - { key: TZ, value: Asia/Kolkata }
